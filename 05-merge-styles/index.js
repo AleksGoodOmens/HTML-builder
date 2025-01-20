@@ -16,7 +16,7 @@ async function readStyles() {
       if (file.isFile() && path.extname(filePath) === '.css') {
         const data = await readFile(filePath, { encoding: 'utf-8' });
         const outputFilePath = path.join(stylesOutputFolder, 'bundle.css');
-        writeFile(outputFilePath, data, { flag: 'a' });
+        await writeFile(outputFilePath, data, { flag: 'a' });
       }
     }
   } catch (error) {
